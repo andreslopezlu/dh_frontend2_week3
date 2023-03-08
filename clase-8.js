@@ -30,7 +30,7 @@ function marcarFavorito() {
     })
 
 }
-// marcarFavorito()
+marcarFavorito();
 
 
 
@@ -52,6 +52,24 @@ function marcarFavorito() {
 function eliminarAlbum() {
     // desarrollar la función 👇
 
-
+    window.addEventListener("keypress", function (e) {
+        if (e.key=='f'){
+            let idAlbum = prompt ('Introduzca el id del album que desea eliminar');
+            idAlbum=idAlbum.toString();
+            const equalId = (element) => {
+                return element.id == idAlbum;
+            }
+            let indexAlbum = albumesFamosos.findIndex(equalId);
+            if (indexAlbum >= 0) {
+                albumesFamosos.splice(indexAlbum, 1);
+            } else (
+                alert('Introduzca un id de album valido')
+            )
+            renderizarAlbumes(albumesFamosos);
+            marcarFavorito();
+            mostrarDatosEnPerfil();
+        }
+    })
 }
-// eliminarAlbum();
+
+eliminarAlbum();
