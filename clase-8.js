@@ -30,7 +30,7 @@ function marcarFavorito() {
     })
 
 }
-marcarFavorito()
+// marcarFavorito()
 
 
 
@@ -54,4 +54,4 @@ function eliminarAlbum() {
 
 
 }
-eliminarAlbum();
+// eliminarAlbum();

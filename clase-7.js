@@ -1,4 +1,4 @@
-/* --------------------------- listado de almbumes --------------------------- */
+/* --------------------------- listado de albumes --------------------------- */
 const albumesFamosos = [{
         id: "x123",
         nombre: "Nevermind",
@@ -55,7 +55,7 @@ function obtenerUsuario() {
     // insertamos el nombre en el HTML
     nombreUsuario.innerText = usuario;
 }
-// obtenerUsuario();
+obtenerUsuario();
 
 /* -------------------------------------------------------------------------- */
 /*                [2] FUNCION: renderizar tarjetas del almbumes               */
@@ -99,6 +99,11 @@ renderizarAlbumes(albumesFamosos);
 // sea necesario ( es decir: 1 album, 1 favorito / 2 albumes, 3 favoritos )
 function mostrarDatosEnPerfil() {
     // desarrollar la función 👇
+    let cantidadAlbumes=document.querySelector('#cant-albums');
+    cantidadAlbumes.innerHTML = `<span id="cant-albums">${albumesFamosos.length}  álbumes</span>`;
 
+    let cantidadFavoritos=document.querySelector('#cant-favoritos');
+    let favoritos=albumesFamosos.filter(album => {return album.like})
+    cantidadFavoritos.innerHTML = `<span id="cant-favoritos">${favoritos.length} favoritos</span>`
 }
 mostrarDatosEnPerfil();
