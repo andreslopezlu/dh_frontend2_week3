@@ -25,6 +25,7 @@ function marcarFavorito() {
             //👇 post click debemos renderizar nuevamente las tarjetas
             renderizarAlbumes(albumesFamosos);
             //👇 post click debemos agregar el listener a cada nuevo boton otra vez ya que el renderizado eliminó lo anterior
+            mostrarDatosEnPerfil();
             marcarFavorito();
         })
     })
@@ -66,8 +67,8 @@ function eliminarAlbum() {
                 alert('Introduzca un id de album valido')
             )
             renderizarAlbumes(albumesFamosos);
-            marcarFavorito();
             mostrarDatosEnPerfil();
+            marcarFavorito();
         }
     })
 }
