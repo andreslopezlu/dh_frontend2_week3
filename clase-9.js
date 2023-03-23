@@ -60,3 +60,20 @@ window.addEventListener('load', function () {
 // 4- El parrafo agregado debe ser de color verde y decir: "Usuario oficial de Spotifront"
 // 5- Por ultimo, si ese parrafo es clickeado, debe mostrar una alerta al usuario que diga: "Gracias por confiar en nosotros."
 
+setTimeout(()=>{
+    let masMusica = confirm('Desea conocer mas musica?');
+    if (masMusica === true) {
+        location.replace('https://open.spotify.com/')
+    } else if (masMusica === false) {
+        let usuarioOficial = document.createElement('p')
+        usuarioOficial.classList.add('usuario-oficial')
+        usuarioOficial.innerHTML = `Usuario oficial de Spotifront`
+        let perfil = document.querySelector('.perfil')
+        perfil.appendChild(usuarioOficial)
+        
+        let parrafoOficial = document.querySelector('.usuario-oficial')
+        parrafoOficial.addEventListener('click', ()=>{
+            alert('Gracias por confiar en nosotros.')
+        })
+    }
+}, 3000)
